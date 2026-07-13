@@ -6,15 +6,25 @@ import './App.css'
 import Homepage from './components/Homepage'
 import Addcar from './components/Addcar'
 import Viewcar from './components/Viewcar'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-    <Homepage/>
-    <Addcar/>
-    <Viewcar/>
+    <BrowserRouter>
+    <Routes>
+            <Route path='/' element={<Homepage/>} />
+
+
+      <Route path='/add' element={<Addcar/>} />
+      <Route path='/view' element={<Viewcar/>} />
+
+    </Routes>
+    </BrowserRouter>
+      
       
     </>
   )
